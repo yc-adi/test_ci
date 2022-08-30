@@ -1,0 +1,32 @@
+name: test ci
+
+on:
+    #
+  
+    # Allow to run this workflow manually from the Actions tab
+    workflow_dispatch:
+  
+jobs:
+    # job 1
+    verify_tifs:
+        runs-on: self-hosted
+
+        steps:
+            # Check out the repository under $GITHUB_WORKSPACE so that the job can access it
+            - uses: actions/checkout@v3
+              with:
+                submodules: false
+                repository: yc-adi/ble_auto_testing
+                ref: main
+
+              run: |
+                echo $GITHUB_WORKSPACE
+            
+            # Run commands in the runner's shell
+            - name: run the test
+              run: |
+                echo "Run the test"
+                cd $GITHUB_WORKSPACE
+                ls -hal
+                cd ble_auto_testing
+                bash -ex .github/workflows/run.sh
