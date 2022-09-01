@@ -35,11 +35,11 @@ jobs:
         with:
           submodules: false 
 
-      - uses: actions/checkout@v3
-        with:
-          submodules: false
-          repository:  Analog-Devices-MSDK/msdk 
-          ref: main
+      #- uses: actions/checkout@v3
+      #  with:
+      #    submodules: false
+      #    repository:  Analog-Devices-MSDK/msdk 
+      #    ref: main
       
       - uses: actions/checkout@v3
         with:
