@@ -40,12 +40,14 @@ jobs:
       #    submodules: false
       #    repository:  Analog-Devices-MSDK/msdk 
       #    ref: main
+      #    path: msdk
 
       - uses: actions/checkout@v3
         with:
           submodules: false
           repository: yc-adi/ble_auto_testing
           ref: main
+          path: ble_auto_testing
 
       # Runs a set of commands using the runners shell
       - name: Build BLE5_ctr and flash to boards
