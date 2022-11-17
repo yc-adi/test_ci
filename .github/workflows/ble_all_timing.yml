@@ -1,4 +1,4 @@
-name: BLE Verify TIFS
+name: BLE verify all timings
 
 # Controls when the workflow will run
 on:
