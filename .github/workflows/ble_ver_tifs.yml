@@ -15,7 +15,7 @@ on:
 jobs:
   lock:
     # The type of runner that the job will run on
-    runs-on: [ self-hosted, tc_yc_office, btm-ci ]
+    runs-on: [ self-hosted, tc_yc_office, tc_yc, btm-ci ]
      # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Lock Resources
