@@ -15,7 +15,7 @@ on:
 jobs:
   lock:
     # The type of runner that the job will run on
-    runs-on: [self-hosted, tc_yc_office, tc_yc, btm-ci]
+    runs-on: [self-hosted, Linux, X64]
      # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Lock Resources
@@ -26,7 +26,7 @@ jobs:
           
   verify:
     # The type of runner that the job will run on
-    runs-on: [ self-hosted, btm-ci ]
+    runs-on: [self-hosted, Linux, X64]
     needs: [ lock ] # Only run if the lock was successful
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
