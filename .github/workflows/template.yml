@@ -124,8 +124,8 @@ jobs:
           python3 /home/$USER/Workspace/Resource_Share/Resource_Share.py -l -t 3600 /home/$USER/Workspace/Resource_Share/32665_1.txt
           python3 /home/$USER/Workspace/Resource_Share/Resource_Share.py -l -t 3600 /home/$USER/Workspace/Resource_Share/32665_2.txt
 
-          echo "/home/$USER/Workspace/Resource_Share/1.txt" >  ${FILE_MAX32665}
-          echo "/home/$USER/Workspace/Resource_Share/2.txt" >> ${FILE_MAX32665}
+          echo "/home/$USER/Workspace/Resource_Share/32665_1.txt" >  ${FILE_MAX32665}
+          echo "/home/$USER/Workspace/Resource_Share/32665_2.txt" >> ${FILE_MAX32665}
 
           echo "cat ${FILE_MAX32665}"
           cat ${FILE_MAX32665}
@@ -190,8 +190,8 @@ jobs:
           python3 /home/$USER/Workspace/Resource_Share/Resource_Share.py -l -t 3600 /home/$USER/Workspace/Resource_Share/32655_1.txt
           python3 /home/$USER/Workspace/Resource_Share/Resource_Share.py -l -t 3600 /home/$USER/Workspace/Resource_Share/32655_2.txt
 
-          echo "/home/$USER/Workspace/Resource_Share/1.txt" >  ${FILE_MAX32655}
-          echo "/home/$USER/Workspace/Resource_Share/2.txt" >> ${FILE_MAX32655}
+          echo "/home/$USER/Workspace/Resource_Share/32655_1.txt" >  ${FILE_MAX32655}
+          echo "/home/$USER/Workspace/Resource_Share/32655_2.txt" >> ${FILE_MAX32655}
 
           echo "cat ${FILE_MAX32655}"
           cat ${FILE_MAX32655}
