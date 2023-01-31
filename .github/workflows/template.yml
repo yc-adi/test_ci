@@ -130,7 +130,7 @@ jobs:
           echo "cat ${FILE_MAX32665}"
           cat ${FILE_MAX32665}
 
-          for i in {1..60}; do
+          for i in {1..5}; do
             echo $i
             sleep 60
           done
@@ -158,6 +158,7 @@ jobs:
           echo
           echo "Show lock file for this job."
           cat ${FILE_MAX32665}
+          echo
 
           if [ -f "${FILE_MAX32665}" ]; then
             while IFS= read -r line; do
@@ -223,6 +224,7 @@ jobs:
           echo
           echo "Show lock file for this job."
           cat ${FILE_MAX32655}
+          echo
 
           if [ -f "${FILE_MAX32655}" ]; then
             while IFS= read -r line; do
