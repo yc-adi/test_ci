@@ -117,7 +117,7 @@ jobs:
 
           # save the job related info in the file
           FILE_MAX32665=/home/$USER/Workspace/Resource_Share/History/template_$(date +%Y-%m-%d_%H-%M-%S)_max32665.txt
-          echo "::set-env name=DO_MAX32655::${DO_MAX32655}"
+          echo "::set-env name=FILE_MAX32665::${FILE_MAX32665}"
           echo FILE_MAX32665: ${FILE_MAX32665}
 
           # Lock the hardware resources
@@ -183,7 +183,7 @@ jobs:
 
           # save the job related info in the file
           FILE_MAX32655=/home/$USER/Workspace/Resource_Share/template_$(date +%Y-%m-%d_%H-%M-%S)_max32655.txt
-          echo "::set-env name=DO_MAX32655::${DO_MAX32655}"
+          echo "::set-env name=FILE_MAX32655::${FILE_MAX32655}"
           echo FILE_MAX32655: ${FILE_MAX32655}
 
           # Lock the hardware resources
