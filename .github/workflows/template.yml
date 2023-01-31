@@ -170,7 +170,7 @@ jobs:
               #echo ${line}
               echo "python3 /home/$USER/Workspace/Resource_Share/Resource_Share.py ${line}"
               python3 /home/$USER/Workspace/Resource_Share/Resource_Share.py ${line}
-            done <&FILE_MAX32665
+            done <$FILE_MAX32665
           else
             echo "${FILE_MAX32665} not exist."
           fi
@@ -244,7 +244,7 @@ jobs:
               #echo ${line}
               echo "python3 /home/$USER/Workspace/Resource_Share/Resource_Share.py ${line}"
               python3 /home/$USER/Workspace/Resource_Share/Resource_Share.py ${line}
-            done <&FILE_MAX32655
+            done <$FILE_MAX32655
           else
             echo "${FILE_MAX32655} not exist."
           fi
