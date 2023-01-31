@@ -158,19 +158,21 @@ jobs:
           python3 -c "import sys; print(sys.version)"
           echo
 
-          echo "Show Resource_Share"
+          echo "Show Resource_Share lock files."
           ls -hal /home/$USER/Workspace/Resource_Share
           echo
           echo "Show lock file for this job."
           cat ${FILE_MAX32665}
           echo
 
-          if [ -f "${FILE_MAX32665}" ]; then
+          if [ -f ${FILE_MAX32665} ]; then
             while IFS= read -r line; do
               #echo ${line}
               echo "python3 /home/$USER/Workspace/Resource_Share/Resource_Share.py ${line}"
               python3 /home/$USER/Workspace/Resource_Share/Resource_Share.py ${line}
-            done
+            done <&FILE_MAX32665
+          else
+            echo "${FILE_MAX32665} not exist."
           fi
 
       - name: test_max32655
@@ -242,6 +244,8 @@ jobs:
               #echo ${line}
               echo "python3 /home/$USER/Workspace/Resource_Share/Resource_Share.py ${line}"
               python3 /home/$USER/Workspace/Resource_Share/Resource_Share.py ${line}
-            done
+            done <&FILE_MAX32655
+          else
+            echo "${FILE_MAX32655} not exist."
           fi
 
