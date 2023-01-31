@@ -102,6 +102,9 @@ jobs:
 
 
       - name: test_max32665
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+
         run: |
 
           echo DO_MAX32655: ${DO_MAX32655}
@@ -113,7 +116,7 @@ jobs:
           echo
 
           # save the job related info in the file
-          FILE_MAX32665=/home/$USER/Workspace/Resource_Share/template_$(date +%Y-%m-%d_%H-%M-%S)_max32665.txt
+          FILE_MAX32665=/home/$USER/Workspace/Resource_Share/History/template_$(date +%Y-%m-%d_%H-%M-%S)_max32665.txt
           echo "::set-env name=DO_MAX32655::${DO_MAX32655}"
           echo FILE_MAX32665: ${FILE_MAX32665}
 
@@ -153,14 +156,20 @@ jobs:
           echo "Show Resource_Share"
           ls -hal /home/$USER/Workspace/Resource_Share
           echo
+          echo "Show lock file for this job."
+          cat ${FILE_MAX32665}
 
           if [ -f "${FILE_MAX32665}" ]; then
             while IFS= read -r line; do
               echo ${line}
               python3 /home/$USER/Workspace/Resource_Share/Resource_Share.py ${line}
+            done
           fi
 
-      - name: test_max32655             
+      - name: test_max32655
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+
         run: |
 
           echo DO_MAX32655: ${DO_MAX32655}
@@ -186,7 +195,7 @@ jobs:
           echo "cat ${FILE_MAX32655}"
           cat ${FILE_MAX32655}
 
-          for i in {1..60}; do
+          for i in {1..5}; do
             echo $i
             sleep 60
           done
@@ -212,10 +221,13 @@ jobs:
           echo "Show Resource_Share"
           ls -hal /home/$USER/Workspace/Resource_Share
           echo
+          echo "Show lock file for this job."
+          cat ${FILE_MAX32655}
 
           if [ -f "${FILE_MAX32655}" ]; then
             while IFS= read -r line; do
               echo ${line}
               python3 /home/$USER/Workspace/Resource_Share/Resource_Share.py ${line}
+            done
           fi
 
